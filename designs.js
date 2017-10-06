@@ -1,20 +1,25 @@
 $(document).ready(function() {
 	console.log('ok');
 
-	
+	// When size is submitted by the user, call makeGrid()
+	$('#sizePicker').on('submit', function(e){
+		e.preventDefault();
+		makeGrid();
+	});	
 
+	// makeGrid function
 	function makeGrid(h, w) {
-		console.log('test');
-
-		var table = $('#pixel_canvas');
-		$('#pixel_canvas').empty();
-		// Select color input
-		const color = $('#colorPicker').val();
+	
+		// select canvas
+		const canvas = $('#pixel_canvas');
 		// Select size input
 		const height = $('#input_height').val();
 		const width = $('#input_width').val();
-		console.log(color, height, width);
 
+		console.log(height, width);
+		$(canvas).empty();
+
+		// update grid
 		let updateGrid = function (height, width) {
 			sketch = "";
 			for (let i=0; i < height; i++) {
@@ -25,18 +30,20 @@ $(document).ready(function() {
 				sketch += "</tr>";
 			};
 			return sketch;
+
 		}
-		$(table).append(updateGrid(height, width));
+
+		// set color function
+		let updateColor = function () {
+			$('td').on('click', function() {
+				// Select color input
+				const color = $('#colorPicker').val();
+				$(this).css('background', color);
+			});		
+		}
+
+		$(canvas).append(updateGrid(height, width));
+		updateColor();
 	}
-
-	// When size is submitted by the user, call makeGrid()
-	$('#sizePicker').on('submit', function(e){
-		e.preventDefault();
-		makeGrid();
-	});	
-
-
-	//var canvas = $('#pixel_canvas');
-	//$(canvas).on('click', makeGrid());
 
 });

@@ -1,16 +1,10 @@
-# Pixel Art Maker Project
+Pixel-art-maker
 
-## Table of Contents
 
-* [Instructions](#instructions)
-* [Contributing](#contributing)
+Instructions:
 
-## Instructions
+1. Click on this link:  https://alinaheghedus.github.io/pixel-art-maker/
+2. Customize the canvas by changing the size, press submit button when you're done
+3. Change the color of the canvas's cells by selecting a color with the color picker
 
-To get started, open `designs.js` and start building out the app's functionality.
-
-For specific, detailed instructions, look at the project instructions in the [Udacity Classroom](https://classroom.udacity.com/me).
-
-## Contributing
-
-This repository is the starter code for _all_ Udacity students. Therefore, we most likely will not accept pull requests.
+Have fun!
